@@ -27,8 +27,6 @@ export default function Navbar() {
     }
   };
 
-
-
   return (
     <header className="px-6 md:px-16 w-full absolute top-0 z-50 bg-transparent">
       <div className="flex items-center justify-between py-4">
@@ -56,9 +54,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Search and Cart (hidden on mobile) */}
         <div className="flex items-center space-x-4">
-          {/* Search Input (hidden on mobile) */}
           <div className="relative hidden md:block">
             <input
               type="text"
@@ -68,13 +64,12 @@ export default function Navbar() {
             <FiSearch className="absolute top-1/2 right-4 transform -translate-y-1/2 text-yellow-500 cursor-pointer" />
           </div>
 
-          {/* Cart Icon */}
           <Link href="/ShoppingCart">
             <FiShoppingBag className="text-white text-xl cursor-pointer hidden hover:text-yellow-500 md:block" />
           </Link>
         </div>
 
-        {/* Hamburger Icon (Move to the right) */}
+        {/* Hamburger Icon */}
         <div className="md:hidden ml-auto">
           <button
             type="button"
@@ -89,6 +84,42 @@ export default function Navbar() {
         </div>
       </div>
 
-          </header>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <button
+          type="button"
+          aria-label="Close mobile menu"
+          onClick={toggleMenu}
+          onKeyDown={handleKeyToggleMenu}
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 md:hidden"
+        >
+          <nav
+            className="absolute top-0 left-0 w-3/4 bg-white p-8 flex flex-col space-y-4"
+            aria-label="mobile navigation"
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className="text-black hover:text-yellow-500 transition duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Link
+              href="/ShoppingCart"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-black hover:text-yellow-500 transition duration-300"
+            >
+              Cart
+            </Link>
+          </nav>
+        </button>
+      )}
+    </header>
   );
 }
