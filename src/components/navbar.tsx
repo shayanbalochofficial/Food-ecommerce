@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between py-4">
         {/* Logo */}
         <h1 className="text-xl font-bold text-yellow-500">
-          <span className="text-white">Food</span>tuck
+          <span className="text-white">Food</span>truck
         </h1>
 
         {/* Navigation Links */}
