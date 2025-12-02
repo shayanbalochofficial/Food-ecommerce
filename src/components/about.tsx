@@ -40,7 +40,36 @@ const HeroSection = () => {
           </button>
         </div>
 
-        
+        {/* Right ka Content hai this */}
+        <div className="lg:w-1/2 grid grid-cols-2 gap-6">
+          <div className="col-span-2">
+            <Image
+              src="/hero/omellete.svg"
+              alt="Food Image 1"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg w-full"
+            />
+          </div>
+          <div>
+            <Image
+              src="/hero/pic2.svg"
+              alt="Food Image 2"
+              width={300}
+              height={200}
+              className="rounded-lg shadow-md w-full"
+            />
+          </div>
+          <div>
+            <Image
+              src="/hero/pic1.svg"
+              alt="Food Image 3"
+              width={300}
+              height={200}
+              className="rounded-lg shadow-md w-full"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
