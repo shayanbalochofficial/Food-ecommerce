@@ -1,3 +1,4 @@
+import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -21,13 +22,14 @@ const buttonGroupVariants = cva(
   }
 )
 
-function ButtonGroup({
-  className,
-  orientation,
-  ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof buttonGroupVariants>) {
-  return (
+// ButtonGroup – simple div wrapper
+type ButtonGroupProps = React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof buttonGroupVariants>
+
+const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+  ({ className, orientation, ...props }, ref) => (
     <div
+      ref={ref}
       role="group"
       data-slot="button-group"
       data-orientation={orientation}
@@ -35,49 +37,58 @@ function ButtonGroup({
       {...props}
     />
   )
-}
+)
+ButtonGroup.displayName = "ButtonGroup"
 
-function ButtonGroupText({
-  className,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"div"> & {
+// ButtonGroupText – the one with asChild + Slot (this was the problem)
+type ButtonGroupTextProps = Omit<React.ComponentPropsWithoutRef<"div">, "ref"> & {
   asChild?: boolean
-}) {
-  const Comp = asChild ? Slot : "div"
-
-  return (
-    <Comp
-      className={cn(
-        "bg-muted shadow-xs flex items-center gap-2 rounded-md border px-4 text-sm font-medium [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none",
-        className
-      )}
-      {...props}
-    />
-  )
 }
 
-function ButtonGroupSeparator({
-  className,
-  orientation = "vertical",
-  ...props
-}: React.ComponentProps<typeof Separator>) {
-  return (
-    <Separator
-      data-slot="button-group-separator"
-      orientation={orientation}
-      className={cn(
-        "bg-input relative !m-0 self-stretch data-[orientation=vertical]:h-auto",
-        className
-      )}
-      {...props}
-    />
-  )
+const ButtonGroupText = React.forwardRef<HTMLDivElement, ButtonGroupTextProps>(
+  ({ asChild = false, className, ...props }, ref) => {
+    const Comp = asChild ? Slot : "div"
+
+    return (
+      <Comp
+        ref={ref} // This works because when asChild=true, Slot forwards the ref correctly
+        className={cn(
+          "bg-muted shadow-xs flex items-center gap-2 rounded-md border px-4 text-sm font-medium [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none",
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
+ButtonGroupText.displayName = "ButtonGroupText"
+
+// ButtonGroupSeparator – just forwarding Separator's ref
+type ButtonGroupSeparatorProps = React.ComponentPropsWithoutRef<typeof Separator> & {
+  orientation?: "horizontal" | "vertical"
 }
+
+const ButtonGroupSeparator = React.forwardRef<
+  HTMLHRElement,
+  ButtonGroupSeparatorProps
+>(({ className, orientation = "vertical", ...props }, ref) => (
+  <Separator
+    ref={ref}
+    orientation={orientation}
+    data-slot="button-group-separator"
+    className={cn(
+      "bg-input relative !m-0 self-stretch data-[orientation=vertical]:h-auto",
+      className
+    )}
+    {...props}
+  />
+))
+ButtonGroupSeparator.displayName = "ButtonGroupSeparator"
 
 export {
   ButtonGroup,
-  ButtonGroupSeparator,
   ButtonGroupText,
+  ButtonGroupSeparator,
   buttonGroupVariants,
+  type ButtonGroupProps,
 }
