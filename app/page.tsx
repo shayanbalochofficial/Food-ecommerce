@@ -4,6 +4,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import FoodCategorySection from "@/components/sections/FoodCategorySection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import StatsSection from "@/components/sections/StatsSection";
+import MenuHighlightsSection from "@/components/sections/MenuHighlightsSection";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <FoodCategorySection />
       <WhyChooseUsSection />
       <StatsSection />
+      <MenuHighlightsSection />
     </>
   );
 };
