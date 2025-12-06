@@ -6,6 +6,7 @@ import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import MenuHighlightsSection from "@/components/sections/MenuHighlightsSection";
 import ChefSection from "@/components/sections/ChefSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <StatsSection />
       <MenuHighlightsSection />
       <ChefSection />
+      <TestimonialSection />
     </>
   );
 };
