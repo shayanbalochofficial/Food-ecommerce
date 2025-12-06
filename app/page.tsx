@@ -15,6 +15,7 @@ const page = () => {
       <WhyChooseUsSection />
       <StatsSection />
       <MenuHighlightsSection />
+      <div className=""></div>
     </>
   );
 };
