@@ -1,6 +1,7 @@
-import React from "react";
+import TestimonialCard from "@/components/TestimonialCard";
+import { testimonials } from "@/data/testimonials";
 
-const TestimonialSection = () => {
+export default function TestimonialSection() {
   return (
     <section className="py-20 bg-foodbuck-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,14 +15,24 @@ const TestimonialSection = () => {
           </p>
         </div>
 
-        {/*  */}
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Testimonials from Data */}
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className="animate-slide-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <TestimonialCard
+                name={testimonial.name}
+                role={testimonial.role}
+                content={testimonial.content}
+                rating={testimonial.rating}
+                image={testimonial.image}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default TestimonialSection;
+}
