@@ -21,7 +21,7 @@ export const chefs: Chef[] = [
     name: "Shayan",
     title: "Co founder, Board Director & Head Chef - Main Kitchen",
     specialty: "Nothing",
-    bio: "Nothing Special about him, an ugly loser, a failure, always destroys whatever he touches, but full of hope and believes in himself a lot and kinda over confident, over-thinker, and loves Nia (only one thing better abt him).",
+    bio: "Nothing Special about him, an ugly loser, a failure, always destroys whatever he touches, but full of hope and believes in himself a lot and kinda over confident, over-thinker, and he deeply loves Nia (the only one thing better abt him).",
     image: "/profile.jpg",
   },
   {
@@ -29,7 +29,7 @@ export const chefs: Chef[] = [
     name: "Seth",
     title: "Pastry Chef",
     specialty: "Charsi Person",
-    bio: "Seth is nalla nikamma very khabees person always there after nia, idk wtfreak he thinks of himself, sitting besides nia and overconfident fool thinks he can do anything but does nothing only bak bak krta and faaltu ki charsi pana, I just wanna pick the metal bottle and smash at his face and yes, oki i am jealous of him for no reason, why does he do that. What is he ? mota stomach fool trying to act cool around nia, iski esi ki tesi, i dont wanna swear...",
+    bio: "Seth is nalla nikamma very khabees person always there after nia, idk wtfreak he thinks of himself, sitting besides nia and overconfident fool thinks he can do anything but does nothing only bak bak krta and faaltu ki charsi pana, I just wanna pick the metal bottle and smash at his face and yes, oki i am jealous of him for no reason, why does he do that. What is he ? fool trying to act cool around nia, iski esi ki tesi, i dont wanna swear...",
     image:
       "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=600",
   },

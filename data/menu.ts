@@ -22,7 +22,7 @@ export const menuItems: MenuItem[] = [
     description:
       "Perfectly seared duck breast with cherry gastrique and wild rice pilaf",
     image:
-      "https://images.pexels.com/photos/6614995/pexels-photo-6614995.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=400",
     ingredients: ["Duck Breast", "Cherry", "Wild Rice", "Thyme", "Shallots"],
     servingSize: "1 breast + sides",
   },
