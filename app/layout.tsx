@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-foodbuck-black text-white antialiased">
+        <Navbar />
         <main className="min-h-screen">{children}</main>
       </body>
     </html>
