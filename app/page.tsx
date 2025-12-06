@@ -5,6 +5,7 @@ import FoodCategorySection from "@/components/sections/FoodCategorySection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import MenuHighlightsSection from "@/components/sections/MenuHighlightsSection";
+import ChefSection from "@/components/sections/ChefSection";
 
 const page = () => {
   return (
@@ -15,7 +16,7 @@ const page = () => {
       <WhyChooseUsSection />
       <StatsSection />
       <MenuHighlightsSection />
-      <div className=""></div>
+      <ChefSection />
     </>
   );
 };
