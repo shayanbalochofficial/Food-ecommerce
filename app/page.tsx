@@ -7,6 +7,7 @@ import StatsSection from "@/components/sections/StatsSection";
 import MenuHighlightsSection from "@/components/sections/MenuHighlightsSection";
 import ChefSection from "@/components/sections/ChefSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
+import FoodProcessBanner from "@/components/sections/FoodProcessBanner";
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
       <MenuHighlightsSection />
       <ChefSection />
       <TestimonialSection />
+      <FoodProcessBanner />
     </>
   );
 };

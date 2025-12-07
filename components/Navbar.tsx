@@ -61,7 +61,8 @@ export default function Navbar() {
                       className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors duration-300 font-medium text-lg"
                     >
                       {link.label}
-                    </Link>
+                      </Link>
+                    //   Guten tag
                   ))}
                 </div>
               </SheetContent>
