@@ -8,6 +8,7 @@ import MenuHighlightsSection from "@/components/sections/MenuHighlightsSection";
 import ChefSection from "@/components/sections/ChefSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import FoodProcessBanner from "@/components/sections/FoodProcessBanner";
+import BlogHighlightsSection from "@/components/sections/BlogHighlightsSection";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
       <ChefSection />
       <TestimonialSection />
       <FoodProcessBanner />
+      <BlogHighlightsSection />
     </>
   );
 };
