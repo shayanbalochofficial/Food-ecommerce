@@ -70,6 +70,7 @@ export default function FoodCategorySection() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }
