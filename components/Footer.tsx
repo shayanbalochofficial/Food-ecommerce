@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Instagram,
-  Facebook,
-  Twitter,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -23,6 +16,7 @@ export default function Footer() {
               passion and precision.
             </p>
           </div>
+          {/* finally if he cancels t ughh i need u know if all the stars provide nhi kr rhe*/}
 
           <div>
             <h4 className="text-white font-semibold mb-4">Navigation</h4>
@@ -39,7 +33,7 @@ export default function Footer() {
                     className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors text-sm"
                   >
                     {link.label}
-                  </Link>
+                  </Link> 
                 </li>
               ))}
             </ul>
@@ -64,25 +58,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+            <h4 className="text-white font-semibold mb-4">Follow Me</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="instagram.com/shayanbalochofficial"
                 className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
