@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import Footer from "./../components/Footer";
 
 export const metadata: Metadata = {
   title: "FoodBuck",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className="bg-foodbuck-black text-white antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );
