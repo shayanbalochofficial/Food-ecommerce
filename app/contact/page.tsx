@@ -125,6 +125,7 @@ export default function Contact() {
                 <label className="text-foodbuck-gray-muted text-sm mb-2 block">
                   Message
                 </label>
+
                 <Textarea
                   placeholder="Tell us what's on your mind..."
                   value={formData.message}

@@ -1,12 +1,14 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
-import Footer from "./../components/Footer";
+import { CartProvider } from "@/context-cart/CartContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "FoodBuck",
-  description: "",
+  title: "FoodBuck - Premium Restaurant Experience",
+  description:
+    "Discover excellence in cuisine at FoodBuck. Premium dining with bold flavors and unforgettable experiences.",
 };
 
 export default function RootLayout({
@@ -17,9 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-foodbuck-black text-white antialiased">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <Toaster position="top-right" theme="dark" />
+        </CartProvider>
       </body>
     </html>
   );
