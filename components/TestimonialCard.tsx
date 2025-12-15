@@ -26,7 +26,6 @@ export default function TestimonialCard({
           />
         ))}
       </div>
-
       <p className="text-foodbuck-gray-muted text-base leading-relaxed mb-6">
         {content}
       </p>

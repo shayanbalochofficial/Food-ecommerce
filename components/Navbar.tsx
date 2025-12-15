@@ -5,14 +5,16 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, ShoppingBag } from "lucide-react";
+import { useCart } from "@/context-cart/CartContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { itemCount } = useCart();
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/menu", label: "Menu" },
+    { href: "/menu", label: "Men  u" },
     { href: "/shop", label: "Shop" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
@@ -42,6 +44,17 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <Link href="/shop" className="relative">
+              <Button variant="outline" size="icon" className="relative">
+                <ShoppingBag className="w-5 h-5 text-foodbuck-black" />
+                {itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-foodbuck-orange text-foodbuck-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </Button>
+            </Link>
+
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="outline" size="icon">
@@ -61,8 +74,7 @@ export default function Navbar() {
                       className="text-foodbuck-gray-muted hover:text-foodbuck-orange transition-colors duration-300 font-medium text-lg"
                     >
                       {link.label}
-                      </Link>
-                    //   Guten tag
+                    </Link>
                   ))}
                 </div>
               </SheetContent>
